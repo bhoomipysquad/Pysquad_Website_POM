@@ -1,8 +1,8 @@
 import time
 from Test.conftest import Base_url
 
-class Test_Conftest:
- def test_conftest(self,setup):
+class Test_Conf_test:
+ def test_conf_test(self,setup):
     self.driver = setup
     self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     time.sleep(2)

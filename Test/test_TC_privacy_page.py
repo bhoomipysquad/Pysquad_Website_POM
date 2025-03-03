@@ -6,4 +6,4 @@ class Test_Terms_Privacy:
         self.driver = setup
         self.tc = TC_Privacy(self.driver)
         self.tc.to_open_tc_privacy_page()
-        self.tc.to_open_chatbox()
+        self.tc.to_open_chat_box()

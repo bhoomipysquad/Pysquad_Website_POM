@@ -28,12 +28,12 @@ class TC_Privacy:
                   print(f"Error occurred while clicking {menu}: {e}")
 
 
-    # to open chatbox
-    chatbox_xpath = "//i[@class='fa-solid fa-messages']"
-    def to_open_chatbox(self):
+    # to open chat_box
+    chat_box_xpath = "//i[@class='fa-solid fa-messages']"
+    def to_open_chat_box(self):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(2)
-        self.driver.find_element(By.XPATH, self.chatbox_xpath).click()
+        self.driver.find_element(By.XPATH, self.chat_box_xpath).click()
         time.sleep(2)
         original_window = self.driver.window_handles[0]
         new_window = self.driver.window_handles[1]
@@ -42,6 +42,3 @@ class TC_Privacy:
         self.driver.close()
         self.driver.switch_to.window(original_window)
         time.sleep(2)
-
-
-

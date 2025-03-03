@@ -6,7 +6,7 @@ class AI_pricing:
     def __init__(self,driver):
         self.driver = driver
 
-    # to Open pricing page
+    # to open pricing page
     pricing_xpath = "//a[@target='_self'][normalize-space()='Pricing']"
     def click_and_open_pricing(self):
         self.driver.find_element(By.XPATH,self.pricing_xpath).click()
@@ -18,7 +18,7 @@ class AI_pricing:
 
     # to open AI page
     AI_page_xpath = "//a[@class=' ai-text']"
-    def click_and_open_AI_page(self):
+    def click_and_open_ai_page(self):
         self.driver.find_element(By.XPATH,self.AI_page_xpath).click()
         time.sleep(2)
         original_window = self.driver.window_handles[0]
@@ -42,5 +42,3 @@ class AI_pricing:
         time.sleep(3)
         self.driver.find_element(By.XPATH,self.close_xpath).click()
         time.sleep(2)
-
-

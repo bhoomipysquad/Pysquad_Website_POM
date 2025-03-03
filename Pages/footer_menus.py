@@ -8,14 +8,13 @@ class Footer:
 
     #to open contact us page
     def click_on_footer_menus(self):
-        Quick_links = { "contact_us" : "//div[@class='tp-footer-widget-content']//a[normalize-space()='Contact Us']",
+        quick_links = { "contact_us" : "//div[@class='tp-footer-widget-content']//a[normalize-space()='Contact Us']",
                         "About_us" : "//div[@class='tp-footer-widget-content']//a[normalize-space()='About Us']",
                         "Services" : "//div[@class='tp-footer-widget-content']//a[normalize-space()='Services']",
                         "Blogs" : "//div[@class='tp-footer-widget-content']//a[normalize-space()='Blogs']",
                         "case_studies" : "//a[normalize-space()='Case studies']",
                        }
-
-        for menu, xpath in Quick_links.items():
+        for menu, xpath in quick_links.items():
              try:
                   self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
                   time.sleep(2)
@@ -47,5 +46,6 @@ class Footer:
         time.sleep(2)
         self.driver.execute_script("window.scrollTo(0, 0);")
         time.sleep(2)
+        assert self.driver.current_url == "https://sharelyze.com/"
         self.driver.switch_to.window(original_window)
         time.sleep(2)
