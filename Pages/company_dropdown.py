@@ -28,7 +28,7 @@ class Company_Dropdown:
         self.driver.execute_script("window.scrollTo(0, 400);")
         time.sleep(2)
 
-        # Left button clicking logic
+        # Left button clicking
         left_button_click = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, self.left_button))
         )
@@ -36,14 +36,14 @@ class Company_Dropdown:
         successful_left_clicks = 0
         for i in range(num_clicks):
             try:
-                left_button_click.click()  # Click the left button
-                time.sleep(1)  # Allow some time for the action to happen
+                left_button_click.click()           # Click the left button
+                time.sleep(1)                      # Allow some time for the action to happen
 
-                # Assert that the button is still clickable (optional, based on button behavior)
+                # Assert that the button is still clickable
                 assert left_button_click.is_enabled(), "Left button is not enabled after click."
                 print(f"Left button clicked {i + 1} times successfully.")
 
-                # You can also check if some expected change happens after clicking (e.g., page or element change)
+
                 WebDriverWait(self.driver, 10).until(
                     EC.presence_of_element_located((By.XPATH, "some_element_to_appear_after_click"))
                 )
@@ -56,25 +56,24 @@ class Company_Dropdown:
         # Assert that all 5 left button clicks were successful
         assert successful_left_clicks == num_clicks, f"Left button failed to click {num_clicks} times in a row."
 
-        # Right button clicking logic
+        # Right button clicking
         right_button_click = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, self.right_button))
         )
         successful_right_clicks = 0
         for i in range(num_clicks):
             try:
-                right_button_click.click()  # Click the right button
-                time.sleep(1)  # Allow some time for the action to happen
+                right_button_click.click()            # Click the right button
+                time.sleep(1)                         # Allow some time for the action to happen
 
                 # Assert that the button is still clickable (optional)
                 assert right_button_click.is_enabled(), "Right button is not enabled after click."
                 print(f"Right button clicked {i + 1} times successfully.")
 
-                # You can also check if some expected change happens after clicking
                 WebDriverWait(self.driver, 10).until(
                     EC.presence_of_element_located((By.XPATH, "some_element_to_appear_after_click"))
                 )
-                successful_right_clicks += 1  # Increment successful clicks
+                successful_right_clicks += 1        # Increment successful clicks
 
             except Exception as e:
                 print(f"Error after right button click {i + 1}: {e}")
